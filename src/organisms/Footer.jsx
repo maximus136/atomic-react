@@ -7,8 +7,8 @@ const Footer = ({ ...props }) => {
     <div className={styles.footer}>
 
       <ul>
-        {props.links.map((link) =>
-          <li><a key={link.name} href={link.url}>{link.title}</a></li>
+        {props.links.map((link, index) =>
+          <li key={`key-${index}`}><a key={link.name} href={link.url}>{link.title}</a></li>
         )}
       </ul>
 

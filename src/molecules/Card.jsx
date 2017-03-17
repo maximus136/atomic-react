@@ -6,11 +6,12 @@ import Rating from './Rating';
 import styles from './Card.css';
 
 const Card = (props) => {
+  const cardDetails = (props.cardData !== null) ? props.cardData : null;
   return (
     <div className={styles.cardContainer}>
-      {props.cardData.map((card) =>
-        <div className={styles.card}>
-          <img src={card.image} />
+      {cardDetails && cardDetails.map((card, index) =>
+        <div className={styles.card} key={`key-${index}`}>
+          <img src={card.image} alt={card.heading}/>
           <h2 children={card.heading} />
           <Rating value={4} />
           <p>{card.text} </p>
@@ -30,4 +31,3 @@ Card.propTypes = {
 };
 
 export default Card;
-
