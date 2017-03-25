@@ -1,18 +1,19 @@
 import React, { PropTypes } from 'react';
-import styles from './Footer.css';
-
+import './Footer.css';
+import classnames from 'classnames';
 
 const Footer = ({ ...props }) => {
-  return (
-    <div className={styles.footer}>
+  const { currentYear, links, theme } = props;
 
-      <ul>
-        {props.links.map((link, index) =>
+  return (
+    <div className={classnames('footer', 'acss-footer', `acss-theme-${theme}`)}>
+      <ul className="links">
+        {links.map((link, index) =>
           <li key={`key-${index}`}><a key={link.name} href={link.url}>{link.title}</a></li>
         )}
       </ul>
 
-      <span> © Copyright {props.currentYear} mySite.com </span>
+      <span> &copy; Copyright {currentYear} mySite.com </span>
     </div>
   );
 };
@@ -25,7 +26,11 @@ Footer.propTypes = {
   /**
    * Current Year
   */
-  currentYear: PropTypes.number
+  currentYear: PropTypes.number,
+  /**
+  * Theme
+  */
+  theme: PropTypes.oneOf(['light', 'dark'])
 };
 
 export default Footer;

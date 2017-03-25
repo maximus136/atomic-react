@@ -1,19 +1,16 @@
 import React, { PropTypes } from 'react';
 
-import styles from './Avatar.css';
-
+import './Avatar.css';
 
 const Avatar = ({ ...props }) => {
   return (
     <img
-      className={styles.avatar}
+      className="avatar"
       src={props.picUrl}
       alt={props.altTag}
       width={props.size}
       height={props.size}
     />
-
-
   );
 };
 

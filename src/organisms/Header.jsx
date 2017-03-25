@@ -1,24 +1,39 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-import { Avatar } from '../molecules';
-import styles from './Header.css';
+import { Avatar, Logo } from '../molecules';
+import './Header.css';
+import classnames from 'classnames';
 
-const Header = (props) => (
-  <div className={styles.header}>
+const Header = (props) => {
+  const { theme } = props;
 
-    <Avatar
-      className={styles.avatar}
-      {...props}
-      picUrl="https://avatars1.githubusercontent.com/u/357862"
-      altTag="Vinci Rufus"
-    />
-    <h1 className={styles.logo}>Atomic React</h1>
-
-  </div>
-);
+  return (
+    <div className="header">
+      <Avatar
+        className="avatar"
+        {...props}
+        picUrl="https://upload.wikimedia.org/wikipedia/commons/c/c1/J.J_Thomson.jpg"
+        altTag="Vinci Rufus"
+      />
+      <div className="branding">
+        <Logo
+          imgWidth={80}
+        />
+        <h1 className={classnames(`acss-theme-${theme}`, 'acss-header')}>Atomic React</h1>
+      </div>
+    </div>
+  );
+};
 
 Header.defaultProps = {
   size: 48
+};
+
+Header.propTypes = {
+  /**
+  * Theme
+  */
+  theme: PropTypes.oneOf(['light', 'dark'])
 };
 
 export default Header;

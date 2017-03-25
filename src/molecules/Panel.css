@@ -1,11 +1,6 @@
-.panel{
-
-   background: #eaeaea;
-   
-}
+.panel{}
 
 .panelHeading{
-    background: #ccc;
     padding:0.5rem;
 }
 

@@ -1,19 +1,12 @@
-
 import React from 'react';
 // import skeleton from './skeleton'
-import styles from './Rating.css';
+import './Rating.css';
 
 /**
  * Star rating Molecule with clickable buttons
  */
 
-const Rating = ({
-  value,
-  onClick
-}) => {
-  // const { fontSizes, colors } = { ...skeleton}
-
-
+const Rating = ({ value, onClick }) => {
   const stars = Array.from({ length: 5 }, (a, b) => b);
 
   const sx = {
@@ -66,7 +59,7 @@ const Rating = ({
 
   return (
     <a
-      className={styles.rating}
+      className="rating"
       href=""
       onClick={handleClick()}
     >
@@ -91,4 +84,3 @@ Rating.propTypes = {
 };
 
 export default Rating;
-

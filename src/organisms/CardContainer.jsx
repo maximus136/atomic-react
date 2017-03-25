@@ -14,11 +14,13 @@ class CardContainer extends Component {
   }
 
   render() {
-    const { cardData } = this.props;
+    const { cardData, theme } = this.props;
     const data = (Object.keys(cardData).length) === 0 ? null : cardData.data;
 
     return (
-      <div>{<Card cardData={data}/>}</div>
+      <div>
+        <Card cardData={data} theme={theme}/>
+      </div>
     );
   }
 }
@@ -31,7 +33,11 @@ CardContainer.propTypes = {
   /**
    * Function called to get data
   */
-  fetchCatelogCards: PropTypes.func
+  fetchCatelogCards: PropTypes.func,
+  /**
+  * Theme
+  */
+  theme: PropTypes.oneOf(['light', 'dark'])
 };
 
 export default CardContainer;

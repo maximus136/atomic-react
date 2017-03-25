@@ -1,9 +1,11 @@
 .header{
-    background: #eaeaff;
+    background: #263238;
     padding: 0.5rem;
     min-height:5rem;
 }
 
-.logo{
-
+.branding {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
