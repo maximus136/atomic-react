@@ -35,4 +35,8 @@ Card.propTypes = {
   theme: PropTypes.oneOf(['light', 'dark'])
 };
 
+Card.defaultProps = {
+  theme: 'light'
+};
+
 export default Card;

@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { Header, Footer, CardContainer } from './organisms';
-import { Panel, Grid } from './molecules';
+import { Panel, Grid, Hero, Navigation } from './molecules';
 import classnames from 'classnames';
 
 import './App.css';
 import config from './data/config.json';
 
-const footerLinks = [
-  { title: 'Home', url: 'http://www.yahoo.com' },
-  { title: 'About Us', url: 'http://www.google.com' }
+// TODO: Move these arrays to JSON file(s). Remove Index and use uniqueKeys
+const navLinks = [
+  { title: 'Home', url: 'https://github.com/pagesource/atomic-react', index: '1' },
+  { title: 'Guidelines', url: 'https://github.com/areai51/react-component-design', index: '2' },
+  { title: 'Random Bash', url: 'http://bash.org/?random', index: '3' }
 ];
 
 /* eslint-disable */
@@ -20,6 +22,21 @@ class App extends Component {
     return (
       <div className={classnames('app', `acss-theme-${theme}`, 'acss-background-primary')}>
         <Header theme={theme}/>
+        
+        <Navigation 
+          links={navLinks}
+          theme={theme}
+          align="left"
+        />
+
+        <Hero 
+          backgroundImg="http://placehold.it/1600x400/"
+          imgWidth={100}
+          theme={theme}
+          heading="Hero component"
+          subHeading="with text headings"
+          headingPosition="left"
+        />
         
         <Grid>
           <h2>Cards</h2>
@@ -35,7 +52,7 @@ class App extends Component {
 
         <Footer
           currentYear={2017}
-          links={footerLinks}
+          links={navLinks}
           theme={theme}
         />
       </div>

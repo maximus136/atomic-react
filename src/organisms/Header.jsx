@@ -13,7 +13,7 @@ const Header = (props) => {
         className="avatar"
         {...props}
         picUrl="https://upload.wikimedia.org/wikipedia/commons/c/c1/J.J_Thomson.jpg"
-        altTag="Vinci Rufus"
+        altTag="Sir JJ Thomson"
       />
       <div className="branding">
         <Logo

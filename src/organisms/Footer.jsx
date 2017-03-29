@@ -8,8 +8,8 @@ const Footer = ({ ...props }) => {
   return (
     <div className={classnames('footer', 'acss-footer', `acss-theme-${theme}`)}>
       <ul className="links">
-        {links.map((link, index) =>
-          <li key={`key-${index}`}><a key={link.name} href={link.url}>{link.title}</a></li>
+        {links.map((link) =>
+          <li key={`key-${link.index}`}><a key={link.name} href={link.url}>{link.title}</a></li>
         )}
       </ul>
 
